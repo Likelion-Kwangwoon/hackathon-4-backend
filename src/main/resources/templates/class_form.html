@@ -1,0 +1,16 @@
+<table>
+    <thead>
+    <tr>
+        <th>과목명</th>
+        <th>교수님</th>
+        <th>수업 시간</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="class : ${classList}">
+        <td th:text="${class.classname}"></td>
+        <td th:text="${class.professor}"></td>
+        <td th:text="${class.classtime}"></td>
+    </tr>
+    </tbody>
+</table>

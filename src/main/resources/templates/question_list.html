@@ -1,0 +1,23 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+  <table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th>번호</th>
+      <th>과목명</th>
+      <th>교수님 + 시간</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="chat, loop : ${chatList}">
+      <td th:text="${loop.count}"></td>
+      <td>
+        <a th:href="@{|/chat/detail/${chat.id}|}" th:text="${chat.subject}"></a>
+      </td>
+      <td th:text="${chat.content}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <a th:href="@{/chat/create}" class="btn btn-primary">수업 등록하기</a>
+</div>
+</html>
